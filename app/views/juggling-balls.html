@@ -1,3 +1,5 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
 <link rel="stylesheet" href="/Users/aliciaperezgomez/Documents/prototypes/juggling-licence/public/stylesheets/application.css">
 
 {% extends "layout.html" %}
@@ -11,48 +13,39 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <form class="form" action="../juggling-balls-answer" method="post">
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
-  idPrefix: "how-many-balls",
-  name: "how-many-balls",
-  fieldset: {
-    legend: {
-      text: "How many balls can you juggle?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "3 or more",
-      text: "3 or more",
-      checked: checked("how-many-balls", "3 or more")
-    },
-    {
-      value: "1 or 2",
-      text: "1 or 2",
-      checked: checked("how-many-balls", "1 or 2")
-    },
-    {
-      value: "None - I cannot juggle",
-      text: "None - I cannot juggle",
-      checked: checked("how-many-balls", "None - I cannot juggle")
-    }
-  ]
-}) }}
-
+        {{ govukRadios({
+          idPrefix: "how-many-balls",
+          name: "how-many-balls",
+          fieldset: {
+            legend: {
+              text: "How many balls can you juggle?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "three-or-more",
+              text: "3 or more",
+              checked: checked("how-many-balls", "3 or more")
+            },
+            {
+              value: "one-or-two",
+              text: "1 or 2",
+              checked: checked("how-many-balls", "1 or 2")
+            },
+            {
+              value: "none",
+              text: "None - I cannot juggle",
+              checked: checked("how-many-balls", "None - I cannot juggle")
+            }
+          ]
+        }) }}
         <button class="govuk-button" data-module="govuk-button">Continue</button>
-
       </form>
-
     </div>
   </div>
-
 {% endblock %}

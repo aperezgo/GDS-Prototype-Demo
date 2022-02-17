@@ -15,17 +15,17 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="../juggling-balls-answer" method="post">
+      <form class="form" action="/juggling-balls-answer" method="post">
         {{ govukRadios({
           idPrefix: "how-many-balls",
           name: "how-many-balls",
-          fieldset: {
-            legend: {
-              text: "How many balls can you juggle??",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
+            fieldset: {
+              legend: {
+                text: "How many balls can you juggle?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
           items: [
             {
               value: "three-or-more",
@@ -44,6 +44,7 @@
             }
           ]
         }) }}
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
     </div>

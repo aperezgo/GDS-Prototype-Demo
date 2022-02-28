@@ -22,7 +22,7 @@
             Number of balls you can juggle
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['how-many-balls'].toString().replace('three-or-more','Three or more')
+            {{ data['how-many-balls-edited'].toString().replace('three-or-more','Three or more')
             }}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -38,7 +38,7 @@
             Your most impressive juggling trick
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['most-impressive-trick'] }}
+            {{ data['most-impressive-trick-edited'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/juggling-trick-edited">
@@ -53,7 +53,7 @@
             Object(s) you can juggle
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['object'].toString()
+            {{ data['object-edited'].toString()
               .replace(',', ', ')
               .replace('apples',' Apples')
               .replace('plates',' Plates') 

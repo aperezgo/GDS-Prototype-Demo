@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/check-answers" method="post">
-
+    
         {{ govukCheckboxes({
           idPrefix: "object",
           name: "object",
@@ -33,19 +33,23 @@
           items: [
             {
               value: "apples",
-              text: "Apples"
+              text: "Apples",
+              checked: data['object'].includes('apples')
             },
             {
               value: "plates",
-              text: "Plates"
+              text: "Plates",
+              checked: data['object'].includes('plates')
             },
             {
               value: "clubs",
-              text: "Clubs"
+              text: "Clubs",
+              checked: data['object'].includes('clubs')
             },
             {
               value: "cushions",
-              text: "Cushions"
+              text: "Cushions",
+              checked: data['object'].includes('cushions')
             }
           ]
         }) }}
